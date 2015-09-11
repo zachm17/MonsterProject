@@ -9,7 +9,10 @@ public class MarshmallowMonster
 	private double monsterLegs;
 	private boolean monsterBellyButton;
 	
-	private MarshmallowMonster();
+	private MarshmallowMonster()
+	{
+		
+	}
 	
 	public MarshmallowMonster(String monsterName, int monsterEyes, int monsterNoses, double monsterHair, double monsterLegs, boolean monsterBellyButton )
 	
