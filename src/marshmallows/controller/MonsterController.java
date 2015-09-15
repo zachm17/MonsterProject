@@ -23,5 +23,14 @@ public class MonsterController
 	public void start()
 	{
 		myOutput.displayMonsterInfo(zachMonster.toString());
+		askQuestions();
+		myOutput.displayMonsterInfo("New Monster Info" + zachMonster.toString());
 	}	
+	
+	private void askQuestions()
+	{
+		
+	}
+	
+	
 }
