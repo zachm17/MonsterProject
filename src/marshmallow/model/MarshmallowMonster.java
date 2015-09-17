@@ -72,12 +72,12 @@ public class MarshmallowMonster
 		this.monsterNoses = monsterNoses;
 	}
 	
-	public void setMonsterHair(int monsterHair)
+	public void setMonsterHair(double monsterHair)
 	{
 		this.monsterHair = monsterHair;
 	}
 	
-	public void setMonsterLegs(int monsterLegs)
+	public void setMonsterLegs(double monsterLegs)
 	{
 		this.monsterLegs = monsterLegs;
 	}
