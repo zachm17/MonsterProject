@@ -25,9 +25,10 @@ public class MonsterController
 	}
 	public void start()
 	{
-		myOutput.displayMonsterInfo(zachMonster.toString());
-		askQuestions();
-		myOutput.displayMonsterInfo("New Monster Info" + zachMonster.toString());
+		myOutput.displayMonsterConsole(zachMonster.toString());
+		myOutput.displayMonsterGUI(zachMonster.toString());
+	   	//makeUserMonster();
+		myOutput.displayMonsterGUI("New Monster Info" + userMonster.toString());
 	}	
 	
 	private void askQuestions()
@@ -73,7 +74,7 @@ public class MonsterController
 		userEyes = monsterScanner.nextInt();
 		System.out.println("Type in the number of noses for this monster.");
 		userNoseCount = monsterScanner.nextInt();
-		System.out.println("Type in the number of hair for this monster.");
+		System.out.println("Type in the number of hair for this monster. decimal number");
 		userHair = monsterScanner.nextDouble();
 		System.out.println("Type in the number of legs for this monster.");
 		userLegs = monsterScanner.nextDouble();
