@@ -1,6 +1,7 @@
 package marshmallows.controller;
 
 import marshmallow.model.MarshmallowMonster;
+import marshmallows.view.PopupMonsterDisplay;
 import marshmallows.view.MarshmallowOutput;
 import java.util.Scanner;
 

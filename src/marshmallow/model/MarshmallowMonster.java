@@ -1,5 +1,9 @@
 package marshmallow.model;
 
+import marshmallows.view.PopupMonsterDisplay;
+
+
+
 public class MarshmallowMonster
 {
 	private String monsterName;
@@ -9,9 +13,14 @@ public class MarshmallowMonster
 	private double monsterLegs;
 	private boolean monsterBellyButton;
 	
-	private MarshmallowMonster()
+	public MarshmallowMonster()
 	{
-		
+		monsterName = "";
+		monsterEyes = -99;
+		monsterNoses = -98;
+		monsterHair = -.008;
+		monsterLegs = -.009;
+		monsterBellyButton = false;
 	}
 	
 	public MarshmallowMonster(String monsterName, int monsterEyes, int monsterNoses, double monsterHair, double monsterLegs, boolean monsterBellyButton )
