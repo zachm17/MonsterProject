@@ -4,6 +4,14 @@ import javax.swing.JOptionPane;
 
 public class PopupMonsterDisplay
 {
+	public class PopupDisplay
+	{
+		public void showResponse (String wordsFromSomewhere)
+		{
+			JOptionPane.showMessageDialog(null, wordsFromSomewhere);
+		}
+	
+
 	public String grabAnswer(String stuff)
 	{
 		String answer = "";
@@ -12,4 +20,5 @@ public class PopupMonsterDisplay
 		
 		return answer;
 	}
+}
 }

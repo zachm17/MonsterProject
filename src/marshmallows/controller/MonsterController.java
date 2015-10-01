@@ -11,7 +11,12 @@ public class MonsterController
 	private MarshmallowMonster userMonster;
 	private MarshmallowOutput myOutput;
 	private Scanner monsterScanner;
+	private PopupMonsterDisplay myPopups;
 	public MonsterController()
+	{
+		myPopups = new PopupMonsterDisplay();
+	}
+	
 	{
 		int eyes = 7;
 		double legs = 4;
@@ -26,6 +31,18 @@ public class MonsterController
 	}
 	public void start()
 	{
+		String monsterName = myPopups.grabAnswer("Type a better name for the monster bruh");
+		myPopups.showResponse("Your better monster name is" + monsterName);
+		
+		String tempEyes = myPopups.grabAnswer ("Type in different number for the eyes for the monster");
+		int betterMonsterEyes;
+		myPopups.showResponse("You typed" + tempEyes);
+		
+		while(!isInteger(tempEyes))
+		{
+			tempEyes = myPopups.grabAnswer("Type in a positive integer for your age NAO!!!");
+		}
+		
 		myOutput.displayMonsterConsole(zachMonster.toString());
 		myOutput.displayMonsterGUI(zachMonster.toString());
 	   	//makeUserMonster();
