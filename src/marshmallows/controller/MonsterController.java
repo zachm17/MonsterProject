@@ -12,6 +12,9 @@ public class MonsterController
 	private MarshmallowOutput myOutput;
 	private Scanner monsterScanner;
 	private PopupMonsterDisplay myPopups;
+	private MarshmallowMonster myTestThing;
+	
+	
 	public MonsterController()
 	{
 		myPopups = new PopupMonsterDisplay();
@@ -35,19 +38,83 @@ public class MonsterController
 		myPopups.showResponse("Your better monster name is" + monsterName);
 		
 		String tempEyes = myPopups.grabAnswer ("Type in different number for the eyes for the monster");
-		int betterMonsterEyes;
-		myPopups.showResponse("You typed" + tempEyes);
+		int monsterEyes;
 		
 		while(!isInteger(tempEyes))
 		{
 			tempEyes = myPopups.grabAnswer("Type in a positive integer for your age NAO!!!");
 		}
 		
-		myOutput.displayMonsterConsole(zachMonster.toString());
-		myOutput.displayMonsterGUI(zachMonster.toString());
-	   	//makeUserMonster();
-		myOutput.displayMonsterGUI("New Monster Info" + userMonster.toString());
-	}	
+		if(isInteger(tempEyes))
+		{
+			monsterEyes = Integer.parseInt(tempEyes);
+		}
+		else
+		{
+			monsterEyes = -9999999;
+		}
+		
+		String tempLegs = myPopups.grabAnswer("Type in a different number for the legs");
+		double monsterLegs;
+		
+		while(!isDouble(tempLegs))
+		{
+			tempEyes = myPopups.grabAnswer("Type in a positive integer for your age NAO!!!");
+		}
+		
+		if(isDouble(tempLegs))
+		{
+			monsterLegs = Double.parseDouble(tempLegs);
+		}
+		
+		else
+		{
+			monsterLegs = -.000009;
+		}
+		
+
+		myPopups.showResponse("You typed" + tempEyes);
+	
+		myTestThing = new MarshmallowMonster(monsterName, monsterEyes, monsterEyes, monsterLegs, monsterLegs, false);
+	}
+		
+	{	myOutput.displayMonsterConsole(zachMonster.toString());
+	myOutput.displayMonsterGUI(zachMonster.toString());
+   	//makeUserMonster();
+	myOutput.displayMonsterGUI("New Monster Info" + userMonster.toString());
+}
+
+	private boolean isInteger(String input)
+	{
+		boolean isInt = false;
+	
+		try
+		{
+			int temp = Integer.parseInt(input);
+			isInt = true;
+		}
+		catch(NumberFormatException error)
+		{
+			myPopups.showResponse("not an int - bad value will be used");
+		}
+		return isInt;
+	}
+	private boolean isDouble(String input)
+	{
+		boolean isDouble = false;
+		
+		try
+		{
+			double temp = Double.parseDouble(input);
+			isDouble = true;
+		}
+		catch(NumberFormatException error)
+		{
+			myPopups.showResponse("not a double - bad value will be used");
+		}
+		
+		return isDouble;
+	}
 	
 	private void askQuestions()
 	{

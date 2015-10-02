@@ -3,8 +3,6 @@ package marshmallows.view;
 import javax.swing.JOptionPane;
 
 public class PopupMonsterDisplay
-{
-	public class PopupDisplay
 	{
 		public void showResponse (String wordsFromSomewhere)
 		{
@@ -21,4 +19,4 @@ public class PopupMonsterDisplay
 		return answer;
 	}
 }
-}
+

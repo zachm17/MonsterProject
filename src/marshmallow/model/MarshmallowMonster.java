@@ -1,6 +1,6 @@
 package marshmallow.model;
 
-import marshmallows.view.PopupMonsterDisplay;
+
 
 
 
@@ -13,8 +13,16 @@ public class MarshmallowMonster
 	private double monsterLegs;
 	private boolean monsterBellyButton;
 	
+	/**
+	 * 
+	 */
+	
 	public MarshmallowMonster()
 	{
+		
+		/**
+		 * 
+		 */
 		monsterName = "";
 		monsterEyes = -99;
 		monsterNoses = -98;
@@ -23,7 +31,7 @@ public class MarshmallowMonster
 		monsterBellyButton = false;
 	}
 	
-	public MarshmallowMonster(String monsterName, int monsterEyes, int monsterNoses, double monsterHair, double monsterLegs, boolean monsterBellyButton )
+	public MarshmallowMonster(String monsterName, int monsterEyes, int monsterNoses, double monsterHair, double monsterLegs, boolean monsterBellyButton)
 	
 	{
 		this.monsterName = monsterName;
