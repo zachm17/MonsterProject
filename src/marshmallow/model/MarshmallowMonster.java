@@ -27,7 +27,7 @@ public class MarshmallowMonster
 		monsterEyes = -99;
 		monsterNoses = -98;
 		monsterHair = -.008;
-		monsterLegs = -.009;
+		monsterLegs = -.008;
 		monsterBellyButton = false;
 	}
 	

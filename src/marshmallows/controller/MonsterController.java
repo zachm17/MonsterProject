@@ -12,7 +12,7 @@ public class MonsterController
 	private MarshmallowOutput myOutput;
 	private Scanner monsterScanner;
 	private PopupMonsterDisplay myPopups;
-	private MarshmallowMonster myTestThing;
+	private MarshmallowMonster myMonsterThing;
 	
 	
 	public MonsterController()
@@ -35,7 +35,7 @@ public class MonsterController
 	public void start()
 	{
 		String monsterName = myPopups.grabAnswer("Type a better name for the monster bruh");
-		myPopups.showResponse("Your better monster name is" + monsterName);
+		myPopups.showResponse("Your better monster name is " + monsterName);
 		
 		String tempEyes = myPopups.grabAnswer ("Type in different number for the eyes for the monster");
 		int monsterEyes;
@@ -53,13 +53,32 @@ public class MonsterController
 		{
 			monsterEyes = -9999999;
 		}
+		myPopups.showResponse("New number for the eyes is " + tempEyes);
+		
+		String tempNoses = myPopups.grabAnswer("Type in a different number of noses for the nose of the monster");
+		int monsterNoses;
+		
+		while(!isInteger(tempNoses))
+		{
+			tempNoses = myPopups.grabAnswer("Type in a positive integer for your noses NAO");
+		}
+		
+		if(isInteger(tempNoses))
+		{
+			monsterNoses = Integer.parseInt(tempNoses);
+		}
+		else
+		{
+			monsterNoses = -999999;
+		}
+		myPopups.showResponse("New number for the noses is " + tempNoses);
 		
 		String tempLegs = myPopups.grabAnswer("Type in a different number for the legs");
 		double monsterLegs;
 		
 		while(!isDouble(tempLegs))
 		{
-			tempEyes = myPopups.grabAnswer("Type in a positive integer for your age NAO!!!");
+			tempLegs = myPopups.grabAnswer("Type in a floating point for your legs NAO!!!");
 		}
 		
 		if(isDouble(tempLegs))
@@ -69,19 +88,53 @@ public class MonsterController
 		
 		else
 		{
-			monsterLegs = -.000009;
+			monsterLegs = -8888888;
+		}
+		myPopups.showResponse("New number for the legs is " + tempLegs);
+
+		String tempHair = myPopups.grabAnswer("Type in a different number for the hair");
+		double monsterHair;
+		
+		while (!isDouble(tempHair))
+		{
+			tempHair = myPopups.grabAnswer("Type in a floating point for your hair NAO!!!");
 		}
 		
-
-		myPopups.showResponse("You typed" + tempEyes);
+		if(isDouble(tempHair))
+		{
+			monsterHair = Double.parseDouble(tempHair);
+		}
+		else
+		{
+			monsterHair = -888888;
+		}
+		myPopups.showResponse("New number for the hair is " + tempHair);
+		
+		String tempBellyButton = myPopups.grabAnswer("Type in if monster has a different belly button");
+		boolean monsterBellyButton;
+		
+		while (!isBoolean(tempBellyButton))
+		{
+			tempBellyButton = myPopups.grabAnswer("Type in true or false for your belly button NAO!!!");
+		}
+		
+		if(isBoolean(tempBellyButton))
+		{
+			monsterBellyButton = Boolean.parseBoolean(tempBellyButton);
+		}
+		else
+		{
+			monsterBellyButton = false;
+		}
+		myPopups.showResponse("Monsters Belly Button is " + tempBellyButton);
+		
 	
-		myTestThing = new MarshmallowMonster(monsterName, monsterEyes, monsterEyes, monsterLegs, monsterLegs, false);
 	}
 		
 	{	myOutput.displayMonsterConsole(zachMonster.toString());
 	myOutput.displayMonsterGUI(zachMonster.toString());
    	//makeUserMonster();
-	myOutput.displayMonsterGUI("New Monster Info" + userMonster.toString());
+	
 }
 
 	private boolean isInteger(String input)
@@ -114,6 +167,23 @@ public class MonsterController
 		}
 		
 		return isDouble;
+	}
+	
+	private boolean isBoolean(String input)
+	{
+		boolean isBoolean = false;
+		
+		try
+		{
+			boolean temp = Boolean.parseBoolean(input);
+			isBoolean = true;
+		}
+		catch(NumberFormatException error)
+		{
+			myPopups.showResponse("not a boolean - bad value will be used");
+		}
+		
+		return isBoolean;
 	}
 	
 	private void askQuestions()
